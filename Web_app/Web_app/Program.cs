@@ -14,20 +14,20 @@ namespace Web_app
     {
         public static void Main(string[] args)
         {
-            //BuildWebHost(args).Run();
-            var url = $"http://*:{Environment.GetEnvironmentVariable("PORT")}/";
+            BuildWebHost(args).Run();
+            //var url = $"http://*:{Environment.GetEnvironmentVariable("PORT")}/";
 
-            Console.WriteLine($"Using Url: {url}");
+            //Console.WriteLine($"Using Url: {url}");
 
-            var host = new WebHostBuilder()
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
-                .UseStartup<Startup>()
-                .UseUrls(url)
-                .Build();
+            //var host = new WebHostBuilder()
+            //    .UseKestrel()
+            //    .UseContentRoot(Directory.GetCurrentDirectory())
+            //    .UseIISIntegration()
+            //    .UseStartup<Startup>()
+            //    .UseUrls(url)
+            //    .Build();
 
-            host.Run();
+            //host.Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
