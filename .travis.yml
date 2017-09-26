@@ -1,0 +1,17 @@
+language: csharp
+solution: Web_app.sln
+mono: none
+dotnet: 2.0.0
+build: trusty
+jobs:
+  include:
+  - stage: build
+    script: "./scripts/linux/build.sh"
+  - stage: test
+    script: "./scripts/linux/test.sh"
+  - stage: deploy
+    script: skip
+    deploy:
+      provider: heroku
+      api_key:
+        secure: f4hI4nna9cF+Hc1w7Sg9+TyzsjnVxcmCBn5IMdQxKRICNg+UG1ZyzAUCtGTfANYiOSRD1BMwnAgoGEzUc0eUWD9Gq8+XxujgdueGqx/ewSSqp1M0/ACIAtGB5nkhO9XfU506iZcySqtjoQ8C2a2CWv9h80zhgbARzXCGl/vkq0q/gwRjXJHLekseEOP+wgYsLN0w9e+0HWKZKUU8LzaS65i0b5w4Hc/YisEthf/9SS42uV1o2GyBhPvhJlYmd6FMnsBeLDBF6UiIOIvCV/vgdE+w+aO2Lu5zPoEzacux9y19e3Cu0JaKmvDzT1NaOM2Z+ahoCtmmSsYQ8k2Q3MW4tG+kAvcDSB8CbquWYT2Svrzj0jpDyAhXzZzBVG1rf24sU+Mp1AXAMqmKJaxB5kihqGzpmTuLlihx/JuKzSL0hyz9C8itseEqCIM4Ydqzf0/79Nu281Xw/waTpXc3ppjmNWgXg1+b4xFRD5sfqsVwliqND1RL/twi3RkenZDXqv/h67otGSXDKNwUz9C1c1nKlFlMvk0ckvo4co38eJ+ZWidKV2jymt4qd6kRzExe7DGfjaUWv+UdeJ/4Fwb58i2R39a15qkjMvzPqm6vXM3sn56+2Sm6Fm5pKEwS2z0SkRF+d+YkISYpaS7a7WNgu8C4wtel025Bt/xYQHuxp/0BUlQ=
