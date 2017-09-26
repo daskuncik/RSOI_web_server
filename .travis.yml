@@ -1,14 +1,14 @@
 language: csharp
-solution: Web_app.sln
+solution: "./Web_app/Web_app.sln"
 mono: none
 dotnet: 2.0.0
 build: trusty
 jobs:
   include:
   - stage: build
-    script: "./scripts/linux/build.sh"
+    script: "./Web_app/scripts/linux/build.sh"
   - stage: test
-    script: "./scripts/linux/test.sh"
+    script: "./Web_app/scripts/linux/test.sh"
   - stage: deploy
     script: skip
     deploy:
