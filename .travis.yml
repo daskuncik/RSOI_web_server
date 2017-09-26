@@ -6,9 +6,7 @@ build: trusty
 jobs:
   include:
   - stage: build
-    script: 
-	- dotnet restore "./Web_app" 
-	- dotnet build "./Web_app"
+    script: dotnet build "./Web_app"
   - stage: test
     script: dotnet test "./Web_app/TestProject"
   - stage: deploy
