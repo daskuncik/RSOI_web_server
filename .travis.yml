@@ -13,8 +13,8 @@ jobs:
     script: skip
     deploy:
       provider: heroku
-	  app: webserver11bld
-	  strategy: git
+	  app : webserver11bld
       api_key:
         secure: 76026dcf-9ddf-47a6-9d6e-c8fa16980160
+	  strategy: git
 	  
